@@ -1,0 +1,8 @@
+.nav-list-link {
+    color: #ff6060;
+    text-decoration: none;
+}
+
+.nav-list-link:hover {
+    border-bottom: 1px solid #ff6060;
+} 

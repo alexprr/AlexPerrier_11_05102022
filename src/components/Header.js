@@ -1,6 +1,9 @@
 import Logo from "../assets/logo.png";
 import styled from "styled-components";
 import { devices } from "../utils/sizes";
+import { Link } from "react-router-dom";
+
+import "../styles/Header.css";
 
 const Nav = styled.header`
   height: 68px;
@@ -37,24 +40,20 @@ const NavListItem = styled.li`
   }
 `;
 
-const NavListLink = styled.a`
-  color: #ff6060;
-  text-decoration: none;
-  &:hover {
-    border-bottom: 1px solid #ff6060;
-  }
-`;
-
 function Header() {
   return (
     <Nav>
       <img src={Logo} alt="logo Kasa" />
       <NavList>
         <NavListItem>
-          <NavListLink href="http://localhost:3000/">Accueil</NavListLink>
+          <Link to="/" className="nav-list-link">
+            Accueil
+          </Link>
         </NavListItem>
         <NavListItem>
-          <NavListLink href="http://localhost:3000/">A Propos</NavListLink>
+          <Link to="/a-propos" className="nav-list-link">
+            A Propos
+          </Link>
         </NavListItem>
       </NavList>
     </Nav>
