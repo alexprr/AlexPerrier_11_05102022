@@ -13,3 +13,11 @@
 .error-msg-details {
     font-size: 36px;
 }
+
+.homepage-link {
+    font-size: 18px;
+}
+
+.homepage-link:hover {
+    border-bottom: #FF6060 1px solid;
+}

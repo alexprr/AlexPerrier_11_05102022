@@ -13,7 +13,9 @@ function Error404() {
         <p className="error-msg-details">{oups}</p>
       </div>
       <p>
-        <Link to="/">Retourner sur la page d'accueil</Link>
+        <Link to="/" className="homepage-link">
+          Retourner sur la page d'accueil
+        </Link>
       </p>
     </div>
   );
