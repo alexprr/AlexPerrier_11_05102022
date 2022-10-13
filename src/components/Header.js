@@ -6,13 +6,14 @@ import { Link } from "react-router-dom";
 import "../styles/Header.css";
 
 const Nav = styled.header`
+  max-width: 1240px;
+  margin: 40px auto;
   height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 40px 100px;
 
-  @media ${devices.medium} {
+  @media ${devices.tablet} {
     margin: 20px;
     gap: 0 50px;
   }
@@ -26,7 +27,7 @@ const NavList = styled.ul`
   padding: 0;
   list-style-type: none;
 
-  @media ${devices.medium} {
+  @media ${devices.mobile} {
     gap: 0 10px;
   }
 `;

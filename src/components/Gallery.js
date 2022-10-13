@@ -1,18 +1,29 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import "../styles/Card.css";
+import { devices } from "../utils/sizes";
 
 const CardsContainer = styled.div`
   display: grid;
-  max-width: 1240px;
-  margin: 45px auto;
+  max-width: 1140px;
   padding: 56px 50px;
   gap: 50px 60px;
-  grid-template-columns: repeat(3, 1fr);
+  margin: 45px auto;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   justify-items: center;
   align-items: center;
   background: #f7f7f7;
   border-radius: 25px;
+
+  @media ${devices.tablet} {
+    margin: 45px 20px;
+  }
+
+  @media ${devices.medium} {
+    margin: 22px 20px;
+  }
 `;
 
 function Gallery() {
@@ -44,7 +55,9 @@ function Gallery() {
     return (
       <CardsContainer>
         {data.map((item) => (
-          <Card key={item.id} title={item.title} cover={item.cover} />
+          <Link key={item.id} to="blabla" className="card-link">
+            <Card key={item.id} title={item.title} cover={item.cover} />
+          </Link>
         ))}
       </CardsContainer>
     );

@@ -5,11 +5,10 @@ const CardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 15px;
-  background: linear-gradient(180deg, rgba(255, 96, 96, 1), rgba(0, 0, 0, 1));
-  border-radius: 10px;
   width: 340px;
   height: 340px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255, 96, 96, 1), rgba(0, 0, 0, 1));
   transition: 200ms;
   &:hover {
     cursor: pointer;
