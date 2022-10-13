@@ -25,37 +25,40 @@ const HeroImg = styled.div`
   align-items: center;
   min-height: 223px;
   background-color: #000;
-  opacity: 0.9;
   background: url(${BannerImage});
   background-size: cover;
   background-position: center;
   border-radius: 25px;
   mix-blend-mode: darken;
+  position: relative;
+  &:before {
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "Chez vous, partout et ailleurs";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    font-size: 48px;
+    border-radius: 25px;
 
-  @media ${devices.mobile} {
-    justify-content: flex-start;
-  }
-`;
-
-const HeroText = styled.p`
-  color: #fff;
-  font-size: 48px;
-
-  @media ${devices.medium} {
-    font-size: 28px;
-  }
-
-  @media ${devices.mobile} {
-    font-size: 24px;
+    @media ${devices.medium} {
+      font-size: 28px;
+    }
+    @media ${devices.mobile} {
+      font-size: 24px;
+    }
   }
 `;
 
 function Hero() {
   return (
     <HeroContainer>
-      <HeroImg>
-        <HeroText>Chez vous, partout ailleurs</HeroText>
-      </HeroImg>
+      <HeroImg></HeroImg>
     </HeroContainer>
   );
 }
