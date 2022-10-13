@@ -1,6 +1,7 @@
-import Gallery from "../components/Gallery";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
+import Gallery from "../components/Gallery";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -8,6 +9,7 @@ function Home() {
       <Header />
       <Hero />
       <Gallery />
+      <Footer />
     </>
   );
 }

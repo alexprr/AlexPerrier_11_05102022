@@ -10,7 +10,6 @@ import { sizes } from '../src/utils/sizes.js'
 const GlobalStyle = createGlobalStyle`
   body {
     box-sizing: border-box;
-    max-width: ${sizes.desktop};
     min-width: ${sizes.mobile};
     margin: 0 auto;
     font-family: 'Montserrat', sans-serif;
