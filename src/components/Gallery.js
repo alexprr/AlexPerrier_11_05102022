@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import "../styles/Card.css";
 import { devices } from "../utils/sizes";
+import { Loader } from "../utils/Loader";
 
 const CardsContainer = styled.div`
   display: grid;
@@ -24,6 +25,19 @@ const CardsContainer = styled.div`
   @media ${devices.medium} {
     margin: 22px 20px;
   }
+`;
+
+const LoadingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  margin-bottom: 100px;
+`;
+
+const LoadingMessage = styled.p`
+  font-size: 48px;
 `;
 
 function Gallery() {
@@ -50,7 +64,12 @@ function Gallery() {
   if (error) {
     return <div>Erreur: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Chargement...</div>;
+    return (
+      <LoadingContainer>
+        <LoadingMessage>Patience ça arrive... 👍</LoadingMessage>
+        <Loader />
+      </LoadingContainer>
+    );
   } else {
     return (
       <CardsContainer>

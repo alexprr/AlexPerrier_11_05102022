@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "../styles/Error404.css";
 import { devices } from "../utils/sizes";
 
@@ -62,6 +63,7 @@ function Error404() {
           </Link>
         </RedirectionContainer>
       </ErrorContainer>
+      <Footer />
     </div>
   );
 }
