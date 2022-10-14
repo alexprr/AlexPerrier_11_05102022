@@ -52,7 +52,7 @@ function Header() {
           </Link>
         </NavListItem>
         <NavListItem>
-          <Link to="/a-propos" className="nav-list-link">
+          <Link to="/about" className="nav-list-link">
             A Propos
           </Link>
         </NavListItem>

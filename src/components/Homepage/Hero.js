@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import BannerImage from "../assets/hero-banner.jpg";
-import { devices } from "../utils/sizes";
+import BannerImage from "../../assets/home/hero-banner.jpg";
+import { devices } from "../../utils/sizes";
 
 const HeroContainer = styled.div`
   margin: 0 auto;
@@ -23,7 +23,7 @@ const HeroImg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 223px;
+  height: 223px;
   background-color: #000;
   background: url(${BannerImage});
   background-size: cover;
@@ -31,6 +31,11 @@ const HeroImg = styled.div`
   border-radius: 25px;
   mix-blend-mode: darken;
   position: relative;
+
+  @media ${devices.mobile} {
+    height: 111px;
+  }
+
   &:before {
     background: rgba(0, 0, 0, 0.4);
     width: 100%;
@@ -51,6 +56,7 @@ const HeroImg = styled.div`
     }
     @media ${devices.mobile} {
       font-size: 24px;
+      height: 111px;
     }
   }
 `;

@@ -1,7 +1,7 @@
 import Header from "../components/Header";
-import Hero from "../components/Hero";
-import Gallery from "../components/Gallery";
 import Footer from "../components/Footer";
+import Hero from "../components/Homepage/Hero";
+import Gallery from "../components/Homepage/Gallery";
 
 function Home() {
   return (

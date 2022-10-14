@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import Card from "./Card";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import "../styles/Card.css";
-import { devices } from "../utils/sizes";
-import { Loader } from "../utils/Loader";
+import "../../styles/Card.css";
+import { devices } from "../../utils/sizes";
+import { Loader } from "../../utils/Loader";
 
 const CardsContainer = styled.div`
   display: grid;

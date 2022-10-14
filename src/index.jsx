@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { createGlobalStyle } from "styled-components";
+import { sizes } from '../src/utils/sizes.js'
 import Home from './pages/Home';
 import Error404 from './pages/Error404'
-import { sizes } from '../src/utils/sizes.js'
+import About from './pages/About';
 
 
 const GlobalStyle = createGlobalStyle`
@@ -24,6 +25,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}/>
+        <Route path="about" element={<About />}/>
         <Route path="*" element={<Error404/>}/>
       </Routes>
     </BrowserRouter>
