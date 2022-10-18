@@ -39,6 +39,7 @@ const RightController = styled.img`
 
 export default function Carrousel({pictures}) {
     const [currentIndex, setCurrentIndex] = useState(0)
+    const currentIndexInt = parseInt(currentIndex + 1);
 
     const Slider = {
         width: '100%',
@@ -65,7 +66,10 @@ export default function Carrousel({pictures}) {
     <Container>
         <LeftController src={LeftArrow} alt='left controller' onClick={goToPrevious}/>
         <RightController src={RightArrow} alt='right controller' onClick={goToNext}/>
-        <Steps></Steps>
+        {currentIndexInt === pictures.length 
+            ? <Steps>{`${pictures.length}/ ${pictures.length}`}</Steps> 
+            : <Steps>{`${currentIndexInt}/ ${pictures.length}`}</Steps>
+        }
         <div style={Slider}></div>
     </Container>
   )
