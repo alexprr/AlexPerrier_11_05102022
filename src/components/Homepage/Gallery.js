@@ -27,7 +27,7 @@ const CardsContainer = styled.div`
   }
 `;
 
-const LoadingContainer = styled.div`
+export const LoadingContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,7 +36,7 @@ const LoadingContainer = styled.div`
   margin-bottom: 100px;
 `;
 
-const LoadingMessage = styled.p`
+export const LoadingMessage = styled.p`
   font-size: 48px;
 `;
 
@@ -74,7 +74,7 @@ function Gallery() {
     return (
       <CardsContainer>
         {data.map((item) => (
-          <Link key={item.id} to="blabla" className="card-link">
+          <Link key={item.id} to={`/housing/${item.id}`} className="card-link">
             <Card key={item.id} title={item.title} cover={item.cover} />
           </Link>
         ))}

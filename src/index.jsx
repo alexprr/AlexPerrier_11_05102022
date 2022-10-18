@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { createGlobalStyle } from "styled-components";
 import { sizes } from '../src/utils/sizes.js'
-import Home from './pages/Home';
+import Home from './pages/Home'
 import Error404 from './pages/Error404'
 import About from './pages/About';
+import Housing from './pages/Housing'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -25,11 +26,11 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path="about" element={<About />}/>
+        <Route path="/about" element={<About />}/>
+        <Route path='/housing/:id' element={<Housing />}/>
         <Route path="*" element={<Error404/>}/>
       </Routes>
     </BrowserRouter>
-    
   </React.StrictMode>
 );
 
