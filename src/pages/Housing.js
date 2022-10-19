@@ -11,11 +11,13 @@ import Carrousel from "../components/Housing/Carrousel";
 import Title from "../components/Housing/Title";
 import Host from "../components/Housing/Host";
 import Tags from "../components/Housing/Tags";
+import Ratings from "../components/Housing/Ratings";
+import Description from "../components/Housing/Description";
+import Equipments from "../components/Housing/Equipments";
 import Footer from "../components/Footer";
 
 const GlobalContainer = styled.div`
   max-width: 1240px;
-  height: 415px;
   margin: 0 auto 12rem;
 `;
 
@@ -33,6 +35,11 @@ const TagsRatingsContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+`;
+
+const DescriptionEquipmentContainer = styled.div`
+  display: flex;
+  align-items: start;
 `;
 
 const TagContent = styled.span`
@@ -83,22 +90,43 @@ function Housing() {
 
         {data
           .filter((house) => house.id === id)
-          .map(({ id, title, location, host, pictures, tags }) => (
-            <GlobalContainer key={id}>
-              <Carrousel pictures={pictures} />
-              <DetailsContainer>
-                <Title title={title} location={location} />
-                <Host host={host} />
-              </DetailsContainer>
-              <TagsRatingsContainer>
-                <Tags
-                  tags={tags.map((tag) => (
-                    <TagContent key={tag}>{tag}</TagContent>
-                  ))}
-                />
-              </TagsRatingsContainer>
-            </GlobalContainer>
-          ))}
+          .map(
+            ({
+              id,
+              title,
+              location,
+              host,
+              pictures,
+              tags,
+              rating,
+              description,
+              equipments,
+            }) => (
+              <GlobalContainer key={id}>
+                <Carrousel pictures={pictures} />
+                <DetailsContainer>
+                  <Title title={title} location={location} />
+                  <Host host={host} />
+                </DetailsContainer>
+                <TagsRatingsContainer>
+                  <Tags
+                    tags={tags.map((tag) => (
+                      <TagContent key={tag}>{tag}</TagContent>
+                    ))}
+                  />
+                  <Ratings color={rating} />
+                </TagsRatingsContainer>
+                <DescriptionEquipmentContainer>
+                  <Description description={description} />
+                  <Equipments
+                    equipments={equipments.map((object) => (
+                      <li key={object}>{object}</li>
+                    ))}
+                  />
+                </DescriptionEquipmentContainer>
+              </GlobalContainer>
+            )
+          )}
         <Footer />
       </>
     );
