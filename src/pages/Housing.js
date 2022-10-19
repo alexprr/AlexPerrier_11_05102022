@@ -10,6 +10,7 @@ import {
 import Carrousel from "../components/Housing/Carrousel";
 import Title from "../components/Housing/Title";
 import Host from "../components/Housing/Host";
+import Tags from "../components/Housing/Tags";
 import Footer from "../components/Footer";
 
 const GlobalContainer = styled.div`
@@ -24,6 +25,24 @@ const DetailsContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+`;
+
+const TagsRatingsContainer = styled.div`
+  max-width: 1240px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+`;
+
+const TagContent = styled.span`
+  min-width: 115px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  background: #ff6060;
+  color: #fff;
+  text-align: center;
 `;
 
 function Housing() {
@@ -64,16 +83,22 @@ function Housing() {
 
         {data
           .filter((house) => house.id === id)
-          .map(({ id, title, location, host, pictures }) => (
+          .map(({ id, title, location, host, pictures, tags }) => (
             <GlobalContainer key={id}>
               <Carrousel pictures={pictures} />
               <DetailsContainer>
                 <Title title={title} location={location} />
                 <Host host={host} />
               </DetailsContainer>
+              <TagsRatingsContainer>
+                <Tags
+                  tags={tags.map((tag) => (
+                    <TagContent key={tag}>{tag}</TagContent>
+                  ))}
+                />
+              </TagsRatingsContainer>
             </GlobalContainer>
           ))}
-
         <Footer />
       </>
     );
