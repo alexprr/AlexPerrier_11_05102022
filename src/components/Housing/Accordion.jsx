@@ -3,12 +3,17 @@ import { useState } from 'react'
 import { devices } from "../../utils/sizes";
 import OpenArrow from "../../assets/icons/open-arrow.svg"
 import CloseArrow from "../../assets/icons/close-arrow.svg"
+import "../../styles/Accordion.css";
 
-export const Wrapper = styled.div`
+export const AccordionWrapper = styled.div`
   display: flex;
   align-items: center;
   max-width: 1240px;
   margin: 24px 80px 200px 0;
+  ${(props) => 
+    props.isLarge && 
+    `margin: 0 auto 20px; justify-content: center;
+    `}
 
   @media ${devices.tablet} {
     margin: 0 50px;
@@ -19,10 +24,12 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Accordion = styled.div`
+export const AccordionContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 582px;
+  ${(props) => 
+    props.isLarge && `width: 1024px;`}
 `;
 
 export const Item = styled.div`
@@ -47,6 +54,8 @@ export const Title = styled.p`
   font-size: 18px;
   font-weight: 500;
   color: #fff;
+  ${(props) => 
+    props.isLarge && `font-size: 24px;`}
 
   @media ${devices.medium} {
     font-size: 13px;
@@ -57,6 +66,8 @@ export const Content = styled.div`
   display: none;
   padding: 30px 20px 10px;
   height: 249px;
+  ${(props) => 
+    props.isLarge && `height: auto; padding: 30px 20px 20px;`}
 
   @media ${devices.medium} {
     padding: 25px 20px;
@@ -68,6 +79,8 @@ const ContentText = styled.p`
   font-size: 18px;
   font-weight: 400;
   color: #ff6060;
+  ${(props) => 
+    props.isLarge && `font-size: 24px;`}
 
   @media ${devices.medium} {
     margin-bottom: 20px;
@@ -75,7 +88,7 @@ const ContentText = styled.p`
   }
 `;
 
-export default function Description({description}) {
+export default function Accordion({title, description, type}) {
     const [selected, setSelected] = useState(false);
     const toggle = () => {
         if (selected) {
@@ -86,22 +99,41 @@ export default function Description({description}) {
     };
 
     return (
-        <Wrapper>
-          <Accordion>
+      <>
+      {type === "large" ? 
+      <AccordionWrapper isLarge>
+          <AccordionContainer isLarge>
               <Item>
                 <TitleWrapper onClick={() => toggle()}>
-                  <Title>Description</Title>
+                  <Title isLarge>{title}</Title>
                   {selected ? (
                     <img src={OpenArrow} alt="opened arrow" />
                   ) : (
                     <img src={CloseArrow} alt="closed arrow" />
                   )}
                 </TitleWrapper>
-                <Content className={selected && "content show"}>
-                  <ContentText>{description}</ContentText>
+                <Content isLarge className={selected && "content show"}>
+                  <ContentText isLarge>{description}</ContentText>
                 </Content>
               </Item>
-          </Accordion>
-        </Wrapper>
-      );
-}
+          </AccordionContainer>
+      </AccordionWrapper>
+      : <AccordionWrapper>
+      <AccordionContainer>
+          <Item>
+            <TitleWrapper onClick={() => toggle()}>
+              <Title>{title}</Title>
+              {selected ? (
+                <img src={OpenArrow} alt="opened arrow" />
+              ) : (
+                <img src={CloseArrow} alt="closed arrow" />
+              )}
+            </TitleWrapper>
+            <Content className={selected && "content show"}>
+              <ContentText>{description}</ContentText>
+            </Content>
+          </Item>
+      </AccordionContainer>
+    </AccordionWrapper>}
+    </>
+    )}

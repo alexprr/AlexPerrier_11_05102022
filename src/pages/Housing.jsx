@@ -12,8 +12,7 @@ import Title from "../components/Housing/Title";
 import Host from "../components/Housing/Host";
 import Tags from "../components/Housing/Tags";
 import Ratings from "../components/Housing/Ratings";
-import Description from "../components/Housing/Description";
-import Equipments from "../components/Housing/Equipments";
+import Accordion from "../components/Housing/Accordion";
 import Footer from "../components/Footer";
 
 const GlobalContainer = styled.div`
@@ -117,9 +116,10 @@ function Housing() {
                   <Ratings color={rating} />
                 </TagsRatingsContainer>
                 <DescriptionEquipmentContainer>
-                  <Description description={description} />
-                  <Equipments
-                    equipments={equipments.map((object) => (
+                  <Accordion title="Description" description={description} />
+                  <Accordion
+                    title="Équipements"
+                    description={equipments.map((object) => (
                       <li key={object}>{object}</li>
                     ))}
                   />
