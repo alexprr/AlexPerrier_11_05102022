@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Navigate } from "react-router-dom";
 import Header from "../components/Header";
 import { Loader } from "../utils/Loader";
 import {
@@ -56,7 +57,8 @@ function Housing() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [data, setData] = useState([]);
-
+  const housingID = data.some(housing => housing.id === id)
+  
   useEffect(() => {
     fetch("http://localhost:3000/data/housing.json").then((res) =>
       res.json().then(
@@ -82,7 +84,8 @@ function Housing() {
         <Loader />
       </LoadingContainer>
     );
-  } else {
+  } else if(housingID){
+    
     return (
       <>
         <Header />
@@ -130,6 +133,10 @@ function Housing() {
         <Footer />
       </>
     );
+  } else {
+    return (
+      <Navigate to="/404"/>
+    )
   }
 }
 
