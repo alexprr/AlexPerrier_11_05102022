@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "../../styles/Card.css";
 import { devices } from "../../utils/sizes";
 import { Loader } from "../../utils/Loader";
+import Thumbnail from "../../assets/home/thumbnail.png";
 
 const CardsContainer = styled.div`
   display: grid;
@@ -75,7 +76,10 @@ function Gallery() {
       <CardsContainer>
         {data.map((item) => (
           <Link key={item.id} to={`/housing/${item.id}`} className="card-link">
-            <Card key={item.id} title={item.title} cover={item.cover} />
+            {item.cover 
+            ? <Card key={item.id} title={item.title} cover={item.cover} />
+            : <Card key={item.id} title={item.title} cover={Thumbnail} />
+            }
           </Link>
         ))}
       </CardsContainer>

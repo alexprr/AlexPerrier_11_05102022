@@ -8,7 +8,6 @@ const CardWrapper = styled.div`
   width: 340px;
   height: 340px;
   border-radius: 10px;
-  background: linear-gradient(180deg, rgba(255, 96, 96, 1), rgba(0, 0, 0, 1));
   transition: 200ms;
   &:hover {
     cursor: pointer;
@@ -24,9 +23,16 @@ const CardTitle = styled.span`
   align-self: start;
 `;
 
-function Card({ title }) {
+function Card({ title, cover }) {
+  const CardStyle = {
+    borderRadius: "25px",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundImage: `url(${cover})`,
+  };
+
   return (
-    <CardWrapper>
+    <CardWrapper style={CardStyle}>
       <CardTitle>{title}</CardTitle>
     </CardWrapper>
   );
@@ -34,6 +40,7 @@ function Card({ title }) {
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,
+  cover: PropTypes.string,
 };
 
 export default Card;
