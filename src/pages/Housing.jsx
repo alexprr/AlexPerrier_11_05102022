@@ -116,7 +116,7 @@ function Housing() {
                       <TagContent key={tag}>{tag}</TagContent>
                     ))}
                   />
-                  <Ratings color={rating} />
+                  <Ratings rating={rating} />
                 </TagsRatingsContainer>
                 <DescriptionEquipmentContainer>
                   <Accordion title="Description" description={description} />

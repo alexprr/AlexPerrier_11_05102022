@@ -1,20 +1,22 @@
-import { styles } from "../../utils/ratings"
-import EmptyStar from "../../assets/icons/empty-star.svg";
-import RedStar from "../../assets/icons/red-star.svg";
+import styled from "styled-components"
+import '../../styles/Ratings.css'
 
-export default function Ratings({color}) {
+const StarContainer = styled.div`
+    display: flex;
+    align-items: center;
+`
 
-    const stars = Array(5).fill(0);
+export default function Ratings({rating, state}) {
+
+    const stars = new Array(5).fill().map((star, index) => (
+        (rating > index) ? 'filled' : 'empty'
+    ))
 
     return (
-        <div style={styles.container}>
-            <div style={styles.stars}>
-                {stars.map((_, index) => (
-                    color.rating > index 
-                    ? <img key={index} alt='' src={EmptyStar}/> 
-                    : <img key={index} alt='' src={RedStar} />
-                ))}
-            </div>
-        </div>
+        <StarContainer>
+            {stars.map((star, index) => (
+                <div key={index} className={star}></div>
+            ))}
+        </StarContainer>
     )
 }
