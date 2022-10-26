@@ -9,7 +9,7 @@ const rotate = keyframes`
     }
 `
 
-export const Loader = styled.div`
+export const Loading = styled.div`
     padding: 10px;
     border: 14px solid #111;
     border-bottom-color: transparent;

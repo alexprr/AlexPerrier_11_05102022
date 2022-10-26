@@ -1,6 +1,11 @@
+// Styled Components
 import styled from "styled-components";
+
+// Components
 import DesktopBanner from "../../assets/about/about_banner_cropped.png";
 import MobileBanner from "../../assets/about/about_banner_cropped_m.png";
+
+// Utils
 import { devices } from "../../utils/sizes";
 
 const BannerContainer = styled.div`

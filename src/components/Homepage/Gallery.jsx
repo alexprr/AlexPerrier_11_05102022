@@ -1,10 +1,23 @@
+// React Hooks
 import { useState, useEffect } from "react";
-import Card from "./Card";
-import styled from "styled-components";
+
+// React Router
 import { Link } from "react-router-dom";
+
+// Styled Components
+import styled from "styled-components";
+
+// Components
+import Card from "./Card";
+import Loader from "../Loader";
+
+// Custom CSS
 import "../../styles/Card.css";
+
+// Utils
 import { devices } from "../../utils/sizes";
-import { Loader } from "../../utils/Loader";
+
+// Assets
 import Thumbnail from "../../assets/home/thumbnail.png";
 
 const CardsContainer = styled.div`
@@ -66,10 +79,7 @@ function Gallery() {
     return <div>Erreur: {error.message}</div>;
   } else if (!isLoaded) {
     return (
-      <LoadingContainer>
-        <LoadingMessage>Patience ça arrive... 👍</LoadingMessage>
-        <Loader />
-      </LoadingContainer>
+      <Loader />
     );
   } else {
     return (

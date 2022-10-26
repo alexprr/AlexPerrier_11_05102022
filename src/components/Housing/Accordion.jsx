@@ -1,26 +1,35 @@
-import styled from "styled-components";
+// React Hooks
 import { useState } from 'react'
+
+// Styled Components
+import styled from "styled-components";
+
+// Custom CSS
+import "../../styles/Accordion.css";
+
+// Utils
 import { devices } from "../../utils/sizes";
+
+// Assets
 import OpenArrow from "../../assets/icons/open-arrow.svg"
 import CloseArrow from "../../assets/icons/close-arrow.svg"
-import "../../styles/Accordion.css";
 
 export const AccordionWrapper = styled.div`
   display: flex;
   align-items: center;
-  max-width: 1240px;
+  width: 1240px;
   margin: 24px 80px 200px 0;
   ${(props) => 
     props.isLarge && 
-    `margin: 0 auto 20px; justify-content: center;
-    `}
+    `margin: 0 auto 20px; justify-content: center;`}
 
   @media ${devices.tablet} {
-    margin: 0 50px;
-  }
+    margin: 24px 0 0 0;
+    width: 100%
+  }  
 
   @media ${devices.medium} {
-    margin: 0 20px;
+    margin: 24px 0 0 0;
   }
 `;
 
@@ -30,6 +39,11 @@ export const AccordionContainer = styled.div`
   width: 582px;
   ${(props) => 
     props.isLarge && `width: 1024px;`}
+
+    @media ${devices.tablet} {
+      margin: 0 20px;
+      width: 100%
+    } 
 `;
 
 export const Item = styled.div`
@@ -69,9 +83,10 @@ export const Content = styled.div`
   ${(props) => 
     props.isLarge && `height: auto; padding: 30px 20px 20px;`}
 
-  @media ${devices.medium} {
-    padding: 25px 20px;
-  }
+    @media ${devices.medium} {
+      height: auto;
+      padding: 25px 20px;
+    }
 `;
 
 const ContentText = styled.p`

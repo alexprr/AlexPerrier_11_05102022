@@ -1,5 +1,10 @@
+// Styled Components
 import styled from "styled-components";
+
+// Components
 import BannerImage from "../../assets/home/hero-banner.jpg";
+
+// Utils
 import { devices } from "../../utils/sizes";
 
 const HeroContainer = styled.div`

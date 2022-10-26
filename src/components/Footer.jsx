@@ -1,6 +1,11 @@
+// Styled Components
 import styled from "styled-components";
-import FooterLogo from "../assets/footer-logo.png";
+
+// Utils
 import { devices } from "../utils/sizes";
+
+// Assets
+import FooterLogo from "../assets/footer-logo.png";
 
 const FooterContainer = styled.footer`
   display: flex;

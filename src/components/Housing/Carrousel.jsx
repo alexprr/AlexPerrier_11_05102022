@@ -1,5 +1,10 @@
-import styled from 'styled-components'
+// React Hooks
 import {useState} from 'react'
+
+// Styled Components
+import styled from 'styled-components'
+
+// Assets
 import LeftArrow from "../../assets/icons/left-arrow.svg"
 import RightArrow from "../../assets/icons/right-arrow.svg"
 

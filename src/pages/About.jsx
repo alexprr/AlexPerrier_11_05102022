@@ -1,7 +1,10 @@
+// Components
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Banner from "../components/About/Banner";
 import Accordion from "../components/Housing/Accordion";
+
+// Utils
 import { about } from "../utils/about";
 
 function About() {

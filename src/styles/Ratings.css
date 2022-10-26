@@ -1,11 +1,13 @@
 .empty {
     width: 30px;
     height: 30px;
+    margin: 0 4px;
     background-image: url('../assets/icons/empty-star.svg');
 }
 
 .filled {
     width: 30px;
     height: 30px;
+    margin: 0 4px;
     background-image: url('../assets/icons/red-star.svg');
 }

@@ -1,8 +1,17 @@
+// React Router
 import { Link } from "react-router-dom";
+
+// Styled Components
 import styled from "styled-components";
+
+// Components
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+
+// Custom CSS
 import "../styles/Error404.css";
+
+// Utils
 import { devices } from "../utils/sizes";
 
 const ErrorContainer = styled.div`

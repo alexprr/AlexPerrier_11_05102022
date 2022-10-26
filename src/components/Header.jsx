@@ -1,7 +1,14 @@
-import Logo from "../assets/logo.png";
-import styled from "styled-components";
-import { devices } from "../utils/sizes";
+//  React Router
 import { Link } from "react-router-dom";
+
+// Styled Components
+import styled from "styled-components";
+
+// Assets
+import Logo from "../assets/logo.png";
+
+// Utils
+import { devices } from "../utils/sizes";
 
 import "../styles/Header.css";
 

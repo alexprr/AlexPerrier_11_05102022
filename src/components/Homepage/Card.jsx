@@ -7,8 +7,8 @@ const CardWrapper = styled.div`
   justify-content: flex-end;
   width: 340px;
   height: 340px;
-  border-radius: 10px;
   transition: 200ms;
+  border-radius: 25px;
   &:hover {
     cursor: pointer;
     box-shadow: 2px 2px 10px #e2e3e9;
@@ -25,10 +25,10 @@ const CardTitle = styled.span`
 
 function Card({ title, cover }) {
   const CardStyle = {
-    borderRadius: "25px",
+    // backgroundImage: `url(${cover})`,
+    background: `linear-gradient(0deg, rgba(106,106,106,.8) 0%, rgba(217,217,217,.1) 40%, rgba(255,255,255,.1) 77%), url(${cover}`,
     backgroundSize: "cover",
     backgroundPosition: "center",
-    backgroundImage: `url(${cover})`,
   };
 
   return (

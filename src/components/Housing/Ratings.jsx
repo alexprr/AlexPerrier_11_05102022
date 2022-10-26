@@ -1,4 +1,7 @@
+// Styled Components
 import styled from "styled-components"
+
+// Custom CSS
 import '../../styles/Ratings.css'
 
 const StarContainer = styled.div`
