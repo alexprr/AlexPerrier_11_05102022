@@ -38,6 +38,13 @@ const CardsContainer = styled.div`
 
   @media ${devices.medium} {
     margin: 22px 20px;
+    background: none;
+  }
+
+  @media ${devices.mobile} {
+    padding: 0;
+    gap: 20px;
+    justify-items: start;
   }
 `;
 

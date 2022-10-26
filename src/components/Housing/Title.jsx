@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { devices } from "../../utils/sizes";
 
 const TitleContainer = styled.div`
-    max-width: 600px;
+    max-width: 800px;
     color: #FF6060;
     margin: 0;
 `

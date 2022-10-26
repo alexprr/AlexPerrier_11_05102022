@@ -41,7 +41,7 @@ export const AccordionContainer = styled.div`
     props.isLarge && `width: 1024px;`}
 
     @media ${devices.tablet} {
-      margin: 0 20px;
+      margin: 0;
       width: 100%
     } 
 `;

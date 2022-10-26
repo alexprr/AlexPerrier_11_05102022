@@ -7,6 +7,10 @@ const HostContainer = styled.div`
     align-items: center;
     max-width: 450px;
     gap: 10px;
+
+    @media ${devices.mobile} {
+        max-width: 100px;
+      } 
 `
 
 const HostName = styled.p`

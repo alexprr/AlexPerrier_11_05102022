@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import {devices} from '../../utils/sizes'
 
 const CardWrapper = styled.div`
   display: flex;
@@ -12,6 +13,11 @@ const CardWrapper = styled.div`
   &:hover {
     cursor: pointer;
     box-shadow: 2px 2px 10px #e2e3e9;
+  }
+
+  @media ${devices.mobile} {
+    width: 460px;
+    height: 340px;
   }
 `;
 

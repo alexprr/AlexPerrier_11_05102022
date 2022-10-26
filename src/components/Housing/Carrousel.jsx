@@ -8,6 +8,9 @@ import styled from 'styled-components'
 import LeftArrow from "../../assets/icons/left-arrow.svg"
 import RightArrow from "../../assets/icons/right-arrow.svg"
 
+// Utils 
+import {devices} from '../../utils/sizes'
+
 const Container = styled.div`
     max-width: 1240px;
     height: 415px;
@@ -31,6 +34,11 @@ const LeftController = styled.img`
     z-index: 1;
     cursor: pointer;
     transform: translateY(-50%);
+
+    @media ${devices.medium} {
+        width: 24px;
+        height: 24px;
+      }
 ` 
 const RightController = styled.img`
     position: absolute;
@@ -40,6 +48,11 @@ const RightController = styled.img`
     z-index: 1;
     cursor: pointer;
     transform: translateY(-50%);
+
+    @media ${devices.medium} {
+        width: 24px;
+        height: 24px;
+      }
 ` 
 
 export default function Carrousel({pictures}) {

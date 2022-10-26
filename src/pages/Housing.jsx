@@ -64,6 +64,7 @@ const AccordionContainer = styled.div`
 
   @media ${devices.tablet} {
     flex-direction: column;
+    margin-bottom: 100px;
   }
 `;
 
