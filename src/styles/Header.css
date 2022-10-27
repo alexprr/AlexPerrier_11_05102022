@@ -5,4 +5,8 @@
 
 .nav-list-link:hover {
     border-bottom: 1px solid #ff6060;
+}
+
+.nav-list-link.active {
+    border-bottom: 1px solid #ff6060;
 } 

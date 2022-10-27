@@ -1,5 +1,5 @@
 //  React Router
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 // Styled Components
 import styled from "styled-components";
@@ -49,17 +49,19 @@ const NavListItem = styled.li`
 `;
 
 function Header() {
+  const { pathname } = useLocation()
+
   return (
     <Nav>
       <img src={Logo} alt="logo Kasa" />
       <NavList>
         <NavListItem>
-          <Link to="/" className="nav-list-link">
+          <Link to="/" className={pathname === '/' ? "nav-list-link active" : "nav-list-link"}>
             Accueil
           </Link>
         </NavListItem>
         <NavListItem>
-          <Link to="/about" className="nav-list-link">
+          <Link to="/about" className={pathname === '/about' ? "nav-list-link active" : "nav-list-link"}>
             A Propos
           </Link>
         </NavListItem>

@@ -19,38 +19,55 @@ export const AccordionWrapper = styled.div`
   align-items: center;
   width: 1240px;
   margin: 24px 80px 200px 0;
-  ${(props) => 
-    props.isLarge && 
-    `margin: 0 auto 20px; justify-content: center;`}
-
   @media ${devices.tablet} {
     margin: 24px 0 0 0;
     width: 100%
-  }  
+  } 
 
-  @media ${devices.medium} {
-    margin: 24px 0 0 0;
+  ${(props) => 
+    props.isLarge && 
+    `margin: 0 auto 40px; 
+    justify-content: center;
+
+    @media ${devices.tablet} {
+      margin: 24px 0 24px 0;
+    }`
   }
+
 `;
 
 export const AccordionContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 582px;
+  @media ${devices.tablet} {
+    margin: 0;
+    width: 100%;
+  } 
+
   ${(props) => 
-    props.isLarge && `width: 1024px;`}
+    props.isLarge && `
+    width: 1024px;
 
     @media ${devices.tablet} {
-      margin: 0;
-      width: 100%
-    } 
+      margin: 0 20px;
+      width: 100%;
+    }`
+  }
 `;
 
 export const Item = styled.div`
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   background: #f7f7f7;
   border-radius: 5px;
+  ${(props) => 
+    props.isLarge && `
+    @media ${devices.tablet} {
+      margin: 0;
+    } 
+    
+    `}
 `;
 
 export const TitleWrapper = styled.div`
@@ -118,7 +135,7 @@ export default function Accordion({title, description, type}) {
       {type === "large" ? 
       <AccordionWrapper isLarge>
           <AccordionContainer isLarge>
-              <Item>
+              <Item isLarge>
                 <TitleWrapper onClick={() => toggle()}>
                   <Title isLarge>{title}</Title>
                   {selected ? (
