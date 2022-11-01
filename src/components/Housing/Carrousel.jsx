@@ -82,9 +82,18 @@ export default function Carrousel({pictures}) {
 
   return (
     <Container>
-        <LeftController src={LeftArrow} alt='left controller' onClick={goToPrevious}/>
-        <RightController src={RightArrow} alt='right controller' onClick={goToNext}/>
-        {currentIndexInt === pictures.length 
+        {pictures.length !== 1 ? 
+        <>
+            <LeftController src={LeftArrow} alt='left controller' onClick={goToPrevious}/>
+            <RightController src={RightArrow} alt='right controller' onClick={goToNext}/>
+        </>
+        : null
+        }
+        
+        {
+        pictures.length === 1 
+        ? null 
+        : currentIndexInt === pictures.length 
             ? <Steps>{`${pictures.length}/ ${pictures.length}`}</Steps> 
             : <Steps>{`${currentIndexInt}/ ${pictures.length}`}</Steps>
         }
